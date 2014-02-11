@@ -41,8 +41,8 @@ static ERL_NIF_TERM new(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[])
         return enif_make_badarg(env);
     }
 
-    buff = malloc(n*sizeof(int));
-    Queue q = {0, 0, n, buff};
+    buff = malloc((n+1)*sizeof(int));
+    Queue q = {0, 0, n+1, buff};
     qptr = enif_alloc_resource(RES_TYPE, sizeof(Queue));
     if(qptr == NULL) return enif_make_badarg(env);
 
