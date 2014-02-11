@@ -43,8 +43,8 @@ precondition(_From,_To,_S,{call,_,new,[Size]}) ->
     Size > 0;
 precondition(_From,_To,S,{call,_,get,_}) ->
     length(S#state.elements) > 0;
-%%precondition(_From,_To,S,{call,_,put,_}) -> 
-%%    length(S#state.elements) < S#state.size; %% ensure we don't insert into a full queue
+precondition(_From,_To,S,{call,_,put,_}) -> 
+    length(S#state.elements) < S#state.size; %% ensure we don't insert into a full queue
 precondition(_From,_To,_S,{call,_,_,_}) ->
     true.
 
