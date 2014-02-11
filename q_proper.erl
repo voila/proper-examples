@@ -15,8 +15,8 @@ init_state(_S) ->
 
 created(S) ->
     [{created, {call,q,put,[S#state.ptr, int()]}},
-     {created, {call,q,get,[S#state.ptr]}}].
-%%     {created, {call,q,size,[S#state.ptr]}}].
+     {created, {call,q,get,[S#state.ptr]}},
+     {created, {call,q,size,[S#state.ptr]}}].
 
 %% Identify the initial state
 initial_state() ->
