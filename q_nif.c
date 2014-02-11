@@ -114,7 +114,7 @@ static ERL_NIF_TERM size(ErlNifEnv* env, int argc, const ERL_NIF_TERM argv[])
       return enif_make_badarg(env);
     }
 
-    size = (qptr->inp - qptr->outp) % qptr->size; 
+    size = (qptr->inp - qptr->outp + qptr->size) % qptr->size; 
     return enif_make_int(env, size);
 }
 
